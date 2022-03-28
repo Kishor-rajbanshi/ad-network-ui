@@ -1,0 +1,671 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Ubuntu:wght@300;400;500&display=swap');
+
+:root{
+	--heighttopbar: 43px;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Ubuntu', sans-serif;
+}
+.body{
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dbd9d9; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
+
+
+
+.wrapper{
+	position: relative;
+	width: 100%;
+}
+.sidenav{
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	background: #fff;
+	overflow-x: scroll;
+	transition: 0.5s;
+
+}
+.sidenav.active{
+	width: 70px;
+}
+.sidenav ul{
+	width: 100%;
+}
+
+.sidenav ul  .logoheader{
+	height:100px;
+	pointer-events: none;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sidenav ul li{
+	position: relative;
+	list-style: none;
+	transition: 0.3s;
+}
+
+.sidenav ul li:hover{
+	
+}
+
+.sidenav ul .headtitle{
+	padding: 10px 30px;
+	color: #000;
+	font-size: 20px;
+	font-weight: 500;
+	display: block;
+}
+
+.sidenav ul li a{
+	position: relative;
+	display:block;
+	width: 100%;
+	display: flex;
+	text-decoration: none;
+	transition: 0.3s;
+	color: #000;
+}
+.sidenav ul li:hover{
+	background: #e8f6ee;
+}
+
+.sidenav ul li.activenav{
+	background: #e8f6ee;
+	border-left: 5px solid seagreen;
+
+}
+.sidenav ul li a .navicon{
+	position: relative;
+	display: block;
+	min-width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-left: 10px;
+	font-size: 18px;
+}
+.sidenav ul li a .navicon i{
+	font-size: 1.50em;
+}
+.sidenav ul li a .navtitle{
+	position: relative;
+	display: block;
+	padding: 0 10px;
+	height: 45px;
+	line-height: 45px;
+}
+
+/* sectiion1 */
+.section1{
+	display: none;
+}
+/* main */
+
+.mainContent{
+	position: relative;
+	width: calc(100% - 250px);
+	left: 250px;
+	min-height: 100vh;
+	background: #e1fce8;
+	transition: 0.5s;
+}
+
+
+.mainContent.active{
+	width: calc(100% - 70px);
+	left: 70px;
+}
+
+.topbar{
+	width: 100%;
+	height: var(--heighttopbar);
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;/* 
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3); */
+	border-bottom: 1px solid #dbd9d9;
+	padding: 0 8px;
+}
+
+.toggleBar{
+	position: relative;
+	width: 50px;
+	height: var(--heighttopbar);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	cursor: pointer;
+}
+
+.rightside{
+	position: relative;
+	display: flex;
+	height: var(--heighttopbar);
+}
+.navlist{
+	position: relative;
+	width: 510px;
+	height: var(--heighttopbar);
+}
+
+
+.navlist ul{
+	height: var(--heighttopbar);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+}
+
+.navlist ul li{
+	padding:  2px 14px;
+	font-size: 14px;
+}
+
+.navlist ul li:nth-child(2){
+	border-left: 1px solid #dbd9d9;
+	border-right: 1px solid #dbd9d9;
+}
+
+
+.userdetials{
+	position: relative;
+	height: 40px;
+}
+
+.userdetials ul{
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+	position: relative;
+}
+
+
+
+.userdetials ul li:nth-child(1),
+.userdetials ul li:nth-child(2){
+	margin: 0 2px;
+	padding: 5px 12px;
+	text-align: center;
+	font-size: 13px;
+}
+
+.userdetials ul .iconbell{
+	font-size: 18px !important;
+	cursor: pointer;
+}
+
+.iconbell .bellinfo{
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	width: 500px;
+	height: 300px;
+	background: #fff;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	display: grid;
+	place-items: center;
+	display: none;
+}
+
+
+.iconbell .bellinfo p{
+	font-size: 14px;
+	margin-bottom: 70px;
+}
+
+/* main and small navigation bar simailar design */
+
+
+.navlist ul li span,
+.smnavlist ul li span{
+	color: seagreen;
+	font-weight: 600;
+}
+/* small navigation bar  */
+
+.smnavlist{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	color: #000;
+	display: none;
+	margin: 10px 0 0 0;
+}
+
+
+.smnavlist ul{
+	list-style: none;
+	text-align: center;
+}
+
+.smnavlist ul li{
+	padding: 3px 5px;
+	font-size: 14px;
+
+}       
+
+/* statistics div */
+
+.statisticsbox, .blankdiv, .datadiv, .formChart, .audience, .fundbox{
+	background: #fff;
+	padding: 5px 20px;
+	height: auto;
+	margin: 15px 20px 20px 20px;
+	border-radius: 4px;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+ .heading{
+	padding: 10px 3px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+
+/* blan div */
+
+.blankdiv{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.blankdiv .blank{
+	background: red;
+	padding: 0px 10px;
+}
+
+/* datadiv */
+
+.datadiv{
+	overflow-x: scroll;
+}
+
+
+
+/* sectiom2 */
+
+.section2{
+	display: none;
+}
+
+.createCampagin{
+	height: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: none;
+}
+
+.createCampagin span i{
+	font-size: 35px;
+	color: seagreen;
+}
+
+/* form campiogin */
+
+.formChart{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.formChart .form{
+	background: green;
+	width: 50%;
+}
+
+
+.formChart .form .radio{
+	text-align: center;
+}
+
+
+.Popundr{
+	display: none;
+}
+
+.btns{
+	border: 1px solid #dbd9d9;
+	margin: 5px 3px;
+}
+.btncopy{
+	height: 40px;
+	margin-top: 30px;
+	width: 60px;
+	background: seagreen;
+	color: #fff;
+
+}
+
+.AutomatedrulesNav{
+	display: flex;
+	justify-content: space-between;
+	font-size: 20px;
+}
+
+.audiencenav, .audiencebody{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.audiencebody div button{
+	width: 90px;
+	margin-top: 33px;
+}
+.audiencenav div button{
+	width: 170px;
+}
+
+.newaudiencenav{
+	background: #fff;
+	padding: 5px ;
+	height: auto;
+	margin: 15px 20px 20px 20px;
+	border-radius: 4px;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+	overflow-x: scroll;
+}
+
+.optionhistory{
+	background: #fff;
+	padding: 5px 20px;
+	height: auto;
+	margin: 0px 20px 20px 20px;
+	border-radius: 4px;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.section3{
+	display: none;
+}
+
+.optionpay{
+	display: none;
+}
+.paymentbox{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+
+}
+
+.morepayactive{
+	display: none;
+}
+.payments{
+	width: 150px;
+	height: 60px;
+	border: 1px solid red;
+	margin-bottom: 15px;
+}
+
+.paybtn input, .paybtn button {
+	margin:15px 0;
+}
+.paybtn span{
+	margin-left: 13px;
+}
+.paybtn span a{
+	text-decoration: underline;
+	color: #000;
+}
+.paybtn span a:hover{
+	text-decoration: none;
+}
+.warningPayments{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+	padding: 0px 20px;
+	margin: 15px 20px 20px 20px;
+	border: 1px solid skyblue;
+	color: skyblue;
+}
+
+.warningPayments .icnWarn i{
+	padding: 15px;
+	font-size: 26px;
+}
+
+.warningPayments .pWarn {
+	padding-top: 6px;
+}
+
+
+.section4{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* next */
+.navinfo{
+	height: var(--heighttopbar);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.navinfo .listnav{
+	height: 100%;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	background: green;
+
+}
+.navinfo div{
+	padding:  8px 14px;
+}
+
+
+.navinfo p{
+	font-size: 13px;
+	font-weight: 450;
+
+}
+.navinfo div p span{
+	font-weight: 600;
+	color: seagreen;
+}
+
+
+
+
+.navinfo .user{
+	height: 40px;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.navinfo .user img{
+	height: 40px;
+	padding: 0 7px;
+	margin-right: 8px;
+	cursor: pointer;
+
+}
+.navinfo .user img:hover + .userinfo{
+	display: block;
+}
+
+.navinfo .user .navicon{
+	font-size: 21px;
+	padding:  7px 20px;
+	color: skyblue;
+	cursor: pointer;
+	position: relative;
+}
+
+
+.navinfo .user .navicon:hover{
+	background: #e8f6ee;
+}
+.navinfo .user .bell{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	background: transparent;
+	user-select: none;
+	display: none;
+}
+.navinfo .user .bell.activebell{
+	display: block;
+}
+.navinfo .user .bellinfo{
+	position: absolute;
+	top: 50px;
+	right: 65px;
+	width: 550px;
+	height: 300px;
+	background: #fff;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	display: grid;
+	place-items: center;
+}
+
+.navinfo .user .bellinfo p{
+	font-size: 14px;
+}
+
+
+.navinfo .user .userinfo{
+	position: absolute;
+	top: 40px;
+	right: 20px;
+	height: 60px;
+	background: #fff;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	transition: opacity .15s ease-in-out;
+	display: none;
+}
+
+
+
+
+.navinfo .user .userinfo a{
+	text-decoration: none;
+	color: #000;
+	letter-spacing: .5px;
+}
+
+
+
+.navinfo .user .userinfo a:hover,
+.navinfo .user .logout:hover{
+	color: seagreen;
+}
+
+.navinfo .user .logout{
+	float: right;
+	padding-top: 7px;
+}
+
+
+
+
+
+
+
+
+.navinfo .servetime{
+	text-align: center;
+}
+.navinfo .advertiserBlance{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1015px) {
+	.navlist{
+		display: none;
+	}
+	.smnavlist{
+		display: block;
+	}
+}
+
